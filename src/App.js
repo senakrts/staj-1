@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import AuthService from './services/auth.service';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <nav className='navbar navbar-expand navbar-light fixed-top'>
+        <div className='container'>
+          <a href='' className='navbar-brand'>
+            Home
+          </a>
+          <div className='collapse navbar-collapse'>
+            <ul className='navbar-nav ml-auto'>
+              <li className='nav-item'>
+                <a href='' className='nav-link'>
+                  Login
+                </a>
+              </li>
+              <li className='nav-item'>
+                <a href='' className='nav-link'>
+                  Sign up
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }
