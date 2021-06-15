@@ -1,33 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import AuthService from './services/auth.service';
+import Login from './components/Login';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='App'>
-      <nav className='navbar navbar-expand navbar-light fixed-top'>
-        <div className='container'>
-          <a href='' className='navbar-brand'>
-            Home
-          </a>
-          <div className='collapse navbar-collapse'>
-            <ul className='navbar-nav ml-auto'>
-              <li className='nav-item'>
-                <a href='' className='nav-link'>
-                  Login
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a href='' className='nav-link'>
-                  Sign up
-                </a>
-              </li>
-            </ul>
+    <BrowserRouter>
+      <div className='App'>
+        <nav className='navbar navbar-expand navbar-light fixed-top'>
+          <div className='container'>
+            <Link className='navbar-brand' to={'/'}>
+              Home
+            </Link>
+            <div className='collapse navbar-collapse'>
+              <ul className='navbar-nav ml-auto'>
+                <li className='nav-item'>
+                  <Link className='nav-link' to={'/login'}>
+                    Login
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to={'/register'}>
+                    Sign up
+                  </Link>
+                </li>
+              </ul>
+              <Switch>
+                <Route exact path='/login' component={Login} />
+              </Switch>
+            </div>
           </div>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </div>
+    </BrowserRouter>
   );
 }
 
