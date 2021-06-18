@@ -2,9 +2,6 @@ import { Component } from 'react';
 import axios from 'axios';
 
 export default class Login extends Component {
-  //async getData(data) {
-  //console.log('data', data);
-  // const res = await
   handleSubmit = e => {
     e.preventDefault();
     const data = {
@@ -15,15 +12,12 @@ export default class Login extends Component {
       .post('http://localhost:8080/api/login', data)
       .then(res => {
         console.log('res', res);
-        localStorage.setItem('token', res.data);
+        localStorage.setItem('token', res.data.token);
       })
       .catch(err => {
         console.log(err);
       });
   };
-
-  // console.log('userName', this.userName, 'password', this.password);
-  //this.getData(data);
 
   render() {
     return (

@@ -1,40 +1,24 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Login from './components/Login';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Change from './pages/Change';
+import Users from './pages/Users';
+import Form from './pages/Form';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className='App'>
-        <nav className='navbar navbar-expand navbar-light fixed-top'>
-          <div className='container'>
-            <Link className='navbar-brand' to={'/'}>
-              Home
-            </Link>
-            <div className='collapse navbar-collapse'>
-              <ul className='navbar-nav ml-auto'>
-                <li className='nav-item'>
-                  <Link className='nav-link' to={'/login'}>
-                    Login
-                  </Link>
-                </li>
-                <li className='nav-item'>
-                  <Link className='nav-link' to={'/register'}>
-                    Sign up
-                  </Link>
-                </li>
-              </ul>
-              <Switch>
-                <Route exact path='/login' component={Login} />
-              </Switch>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </BrowserRouter>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/users' exact component={Users} />
+          <Route path='/change' exact component={Change} />
+          <Route path='/form' exact component={Form} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 

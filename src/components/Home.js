@@ -10,22 +10,23 @@ export default class Home extends Component {
       }
     };
 
-    axios
-      .get('http://localhost:8080/api/users', config)
-      .then(res => {
+    axios.get('http://localhost:8080/api/users', config).then(
+      res => {
+        console.log('res', res);
         this.setstate({
           user: res.data
         });
-      })
+      },
 
-      .catch(err => {
+      err => {
         console.log('sorry', err);
-      });
+      }
+    );
   }
 
   render() {
     if (this.state.user) {
-      return <h2>Hi {this.state.user.userName} </h2>;
+      return <h2>Hi {this.state.user} </h2>;
     }
     return <h2>you are not logged in</h2>;
   }
