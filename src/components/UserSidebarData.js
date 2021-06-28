@@ -3,10 +3,10 @@ import * as FaIcons from 'react-icons/fa';
 import * as IoIcons from 'react-icons/io';
 import * as AiIcons from 'react-icons/ai';
 
-export const SidebarData = [
+export const UserSidebarData = [
   {
     title: 'Home',
-    path: '/',
+    path: '/home',
     icon: <AiIcons.AiFillHome />,
     className: 'nav-text'
   },
@@ -17,15 +17,15 @@ export const SidebarData = [
     className: 'nav-text'
   },
   {
-    title: 'Change',
-    path: '/change',
+    title: 'Edit',
+    path: '/edit',
     icon: <AiIcons.AiFillEdit />,
     className: 'nav-text'
-  },
+  } /*,
   {
     title: 'Form',
     path: '/form',
     icon: <FaIcons.FaEnvelopeOpenText />,
     className: 'nav-text'
-  }
+  }*/
 ];
