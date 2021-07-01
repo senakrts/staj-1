@@ -24,7 +24,7 @@ export default function Edit() {
     <div className='Edit'>
       <Form onSubmit={handleSubmit}>
         <Form.Group size='lg' controlId='birthdate'>
-          <Form.Label>Birth Date</Form.Label>
+          <Form.Label>Doğum Tarihi</Form.Label>
           <Form.Control
             autoFocus
             type='birthdate'
@@ -34,7 +34,7 @@ export default function Edit() {
           />
         </Form.Group>
         <Form.Group size='lg' controlId='idNo'>
-          <Form.Label>Id No</Form.Label>
+          <Form.Label>TC No</Form.Label>
           <Form.Control
             type='idNo'
             value={idNo}
@@ -43,7 +43,7 @@ export default function Edit() {
           />
         </Form.Group>
         <Button block size='lg' type='submit' onClick={handleEditButton}>
-          Submit
+          Kaydet
         </Button>
       </Form>
     </div>

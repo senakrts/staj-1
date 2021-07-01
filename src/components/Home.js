@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <div className='home'>
-      <h2>Hi {state.user} </h2>
+      <h2>Merhaba {state.user} </h2>
     </div>
   );
 }

@@ -15,26 +15,31 @@ export default function Login() {
   function validateForm() {
     return username.length > 0 && password.length > 0;
   }
+
   function handleSubmit(event) {
     event.preventDefault();
   }
+
   const Login = (username, password) => {
+    console.log('Login username', username, password);
     login(username, password).then(res => {
       state.token = res;
       console.log('token', state.token);
+      history.push('/home');
     });
   };
 
   let history = useHistory();
   const handleLoginButton = () => {
-    Login(localStorage.getItem('username'), password);
-    history.push('/home');
+    console.log('handleLoginButton username', username, password);
+    Login(username, password);
   };
+
   return (
     <div className='Login'>
       <Form onSubmit={handleSubmit}>
         <Form.Group size='lg' controlId='username'>
-          <Form.Label>Username</Form.Label>
+          <Form.Label>Kullanıcı İsmi</Form.Label>
           <Form.Control
             autoFocus
             type='username'
@@ -43,7 +48,7 @@ export default function Login() {
           />
         </Form.Group>
         <Form.Group size='lg' controlId='password'>
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Şifre</Form.Label>
           <Form.Control
             type='password'
             value={password}
@@ -57,7 +62,7 @@ export default function Login() {
           disabled={!validateForm()}
           onClick={handleLoginButton}
         >
-          Login
+          Giriş
         </Button>
       </Form>
     </div>

@@ -1,18 +1,18 @@
 .navbar {
-  background-color: #898cd8;
-  height: 80px;
+  background-color: #1f3f69;
+  height: 70px;
   display: flex;
   justify-content: start;
   align-items: center;
 }
 .menu-bars {
   margin-left: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: none;
 }
 
 .nav-menu {
-  background-color: #898cd8;
+  background-color: #1f3f69;
   width: 250px;
   height: 100vh;
   display: flex;
@@ -32,15 +32,15 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
+  padding: 11px 0px 8px 2px;
   list-style: none;
   height: 80px;
 }
 
 .nav-text a {
   text-decoration: none;
-  color: rgb(230, 7, 7);
-  font-size: 20px;
+  color: rgb(223, 153, 24);
+  font-size: 18px;
   width: 95%;
   height: 100%;
   display: flex;
@@ -50,7 +50,7 @@
 }
 
 .nav-text a:hover {
-  background-color: #aa6868;
+  background-color: #1f3f69;
 }
 
 .nav-menu-items {
@@ -58,7 +58,7 @@
 }
 
 .navbar-toggle {
-  background-color: #898cd8;
+  background-color: #1f3f69;
   width: 100%;
   height: 80px;
   display: flex;

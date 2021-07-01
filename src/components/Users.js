@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers } from '../services/Services';
+import { Link } from 'react-router-dom';
 import Parser from 'html-react-parser';
 
 function Users() {
@@ -8,20 +9,31 @@ function Users() {
   useEffect(() => {
     getUsers().then(res => {
       setUserData(
-        '<div>Username: ' +
+        '<div>Kullanıcı İsmi: ' +
           res.username +
-          '</br>Date of birth: ' +
+          '</br>Doğum Tarihi: ' +
           res.dateBirth +
-          '</br>Identification no: ' +
+          '</br>TC No: ' +
           res.identificationNo +
           '</div>'
       );
     });
   }, []);
 
+  const onClickLeave = username => {
+    localStorage.setItem('username', username);
+  };
+
   return (
     <div className='users'>
-      <div>{Parser(userData)}</div>
+      {Parser(userData)}
+      <Link
+        className='forms'
+        to={`/forms`}
+        onClick={() => onClickLeave(localStorage.getItem('username'))}
+      >
+        <span> İzin Formu</span>
+      </Link>
     </div>
   );
 }

@@ -5,27 +5,33 @@ import * as AiIcons from 'react-icons/ai';
 
 export const UserSidebarData = [
   {
-    title: 'Home',
+    title: 'Ana Sayfa',
     path: '/home',
     icon: <AiIcons.AiFillHome />,
     className: 'nav-text'
   },
   {
-    title: 'Users',
+    title: 'Kullanıcı Bilgisi',
     path: '/users',
     icon: <IoIcons.IoMdPeople />,
     className: 'nav-text'
   },
   {
-    title: 'Edit',
+    title: 'Kullanıcı Bilgisi Düzenleme',
     path: '/edit',
     icon: <AiIcons.AiFillEdit />,
     className: 'nav-text'
-  } /*,
+  },
   {
-    title: 'Form',
-    path: '/form',
+    title: 'İzin Girişi',
+    path: '/leaveform',
     icon: <FaIcons.FaEnvelopeOpenText />,
     className: 'nav-text'
-  }*/
+  },
+  {
+    title: 'Çıkış',
+    path: '/logout',
+    icon: <AiIcons.AiOutlineLogout />,
+    className: 'nav-text'
+  }
 ];
